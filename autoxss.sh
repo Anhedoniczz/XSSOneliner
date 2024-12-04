@@ -32,6 +32,10 @@ httpx-toolkit -l "$domain/subdomains" -ports 80,443,8000,8080,8888 -threads 200 
 echo "[+] Cleaning up alivesubs, removing duplicates, and saving to validdomains..."
 awk -F'//' '{print $2}' "$domain/alivesubs" | sort -u > "$domain/validdomains"
 
+# Remove intermediate files
+echo "[+] Removing intermediate files: subdomains and alivesubs..."
+rm "$domain/subdomains" "$domain/alivesubs"
+
 # Step 3: Process each valid domain with the given oneliner
 echo "[+] Running XSS checks for each valid domain..."
 while read -r validdomain; do
