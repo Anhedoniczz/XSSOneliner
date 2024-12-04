@@ -23,6 +23,6 @@ go install github.com/KathanP19/Gxss@latest
 
 go install github.com/hahwul/dalfox/v2@latest
 
-git clone https://github.com/gotr00t0day/spyhunt
-pip3 install -r ~/tools/spyhunt/requirements.txt
-sudo python3 spyhunt/install.py
+go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
+
+go install github.com/tomnomnom/assetfinder@latest
